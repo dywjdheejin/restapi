@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.rest2.dao.UserinfoDAO">
+	<select id="getAlluserinfo" resultType="com.example.rest2.dto.Userinfo">
+		SELECT * FROM User_info
+	</select>
+	
+	<select id="getUser" resultType="com.example.rest2.dto.Userinfo">
+		SELECT * FROM User_info WHERE userid=#{userid}
+	</select>
+	
+	<insert id="insertUser" parameterType="com.example.rest2.dto.Userinfo" useGeneratedKeys="true" keyProperty="userid">
+		INSERT INTO
+			User_info(userid, pw, username, usertype)
+		VALUES
+			(#{userid}, #{pw}, #{username}, #{usertype})
+	</insert>
+	
+	<update id="updateUser">
+		UPDATE
+			User_info
+		SET
+			pw = #{userinfo.pw}, username = #{userinfo.username}, usertype = #{userinfo.usertype}
+		WHERE 
+			userid = #{userid}
+	</update>
+	
+	<delete id="deleteUser" parameterType="com.example.rest2.dto.Userinfo">
+		DELETE FROM 
+			User_info
+		WHERE 
+			userid = #{userid}
+	</delete>
+</mapper>
