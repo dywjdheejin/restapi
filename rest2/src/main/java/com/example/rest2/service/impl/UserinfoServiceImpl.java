@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.rest2.dao.UserinfoDAO;
+import com.example.rest2.dto.Article;
 import com.example.rest2.dto.Userinfo;
 import com.example.rest2.service.UserinfoService;
 
@@ -48,4 +49,8 @@ public class UserinfoServiceImpl implements UserinfoService{
 		dao.deleteUser(userid);
 	}
 	
+	@Override
+	public List<Article> getAllarticle() {
+		return dao.getAllarticle();
+	}
 }

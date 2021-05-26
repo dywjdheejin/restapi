@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.rest2.dto.Article;
 import com.example.rest2.dto.Userinfo;
 import com.example.rest2.service.UserinfoService;
 
@@ -45,5 +46,10 @@ public class UserinfoController {
 	public Userinfo deleteUser(@PathVariable String userid, @RequestBody Userinfo userinfo) {
 		service.deleteUser(userid);
 		return userinfo;
+	}
+	
+	@GetMapping(path="/article")
+	public List<Article> getAllarticle() {
+		return service.getAllarticle();
 	}
 }

@@ -1,5 +1,6 @@
 package com.example.rest2.service;
 
+import com.example.rest2.dto.Article;
 import com.example.rest2.dto.Userinfo;
 
 import java.util.List;
@@ -13,4 +14,6 @@ public interface UserinfoService {
 	void insertUser(Userinfo userinfo);
 	Userinfo updateUser(String userid, Userinfo userinfo);
 	void deleteUser(String userid);
+	
+	List<Article> getAllarticle();
 }

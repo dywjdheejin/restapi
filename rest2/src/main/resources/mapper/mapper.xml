@@ -33,4 +33,8 @@
 		WHERE 
 			userid = #{userid}
 	</delete>
+	
+	<select id="getAllarticle" resultType="com.example.rest2.dto.Article">
+		SELECT * FROM Article
+	</select>
 </mapper>
